@@ -26,12 +26,12 @@ docker network create red-libros
 Ejecute el siguiente comando para iniciar MySQL en Docker:
 
 ```bash
-docker run -d \
-  --name mysql2 \
-  --network red-libros \
-  -e MYSQL_ROOT_PASSWORD=Espe2025. \
-  -e MYSQL_DATABASE=sysdb2025 \
-  -p 3307:3306 \
+docker run -d `
+  --name mysql2 `
+  --network red-libros `
+  -e MYSQL_ROOT_PASSWORD=Espe2025. `
+  -e MYSQL_DATABASE=sysdb2025 `
+  -p 3307:3306 `
   mysql:8.0
 ```
 
@@ -41,11 +41,12 @@ docker run -d \
 ```bash
 docker pull mrcolina/api-restful-libros:1.0
 
-docker run -d \
-  --name api-restful-libros-container \
-  --network red-libros \
-  -p 8001:8001 \
-  mrcolina/api-restful-libros:1.0 
+docker run -d `
+  --name api-restful-libros-container `
+  --network red-libros `
+  -p 8001:8001 `
+  mrcolina/api-restful-libros:1.0
+
 ```
 
 ### Paso 4: Verificar que la API está funcionando
@@ -73,9 +74,13 @@ La API está lista cuando recibe una respuesta (puede ser un array vacío `[]` a
 La API expone los siguientes endpoints REST:
 
 | GET | `/api/libros` | Listar todos los libros |
+
 | GET | `/api/libros/{id}` | Obtener un libro por ID |
+
 | POST | `/api/libros` | Crear un nuevo libro |
+
 | PUT | `/api/libros/{id}` | Actualizar un libro existente |
+
 | DELETE | `/api/libros/{id}` | Eliminar un libro |
 
 ## Pruebas con Postman
